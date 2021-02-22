@@ -23,3 +23,5 @@ Der Speicherverbrauch ist angemessen auch für große Dateneingaben. Es werden l
 @license MIT
 @version 1.0
 @date 2/22/2021
+
+Bearbeitungszeit: 3-4 Stunden
