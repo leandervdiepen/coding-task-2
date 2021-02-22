@@ -1,7 +1,7 @@
 from operator import itemgetter
 import ast
 """
- #  This program has the function MERGE, which takes a list of lists that represent intervals and merges all overlaping intervals
+ #  This program implements the function MERGE, which takes a list of lists that represent intervals and merges all overlaping intervals
  #  into one and returning all merged intervals into an output file named output.txt.
  #  @author Leander van Diepen
  #  @license MIT
@@ -9,7 +9,7 @@ import ast
  #  @date 2/22/2021
 """
 
-
+# @param intervals Takes a two dimensional list of integers in the format (2,N)
 def MERGE(intervals):
     if len(intervals) < 1:
         print("Der übergebene Parameter intervals ist leer oder falsch formatiert. Stelle sicher, dass Daten in input.txt bereitgestellt und richtig formatiert ist.")
@@ -44,8 +44,10 @@ def __main__():
     inputs = open("input.txt", "r")
     for line in inputs:  # O(1)
         intervalsString = line.split(";")
+    ## Format to correct type
         for interval in intervalsString: # O(n)
             intervals.append(ast.literal_eval(interval))
+## Close file
     inputs.close()
 
 # Run function MERGE and do not declare output as variable to save space
@@ -53,8 +55,8 @@ def __main__():
 # Write output to a file output.txt in the same format as the input.txt
     f = open('output.txt', 'w')
     for item in MERGE(intervals):  # O(n)
-        print(item)
         f.write(str(item)+';')
+## Close file
     f.close()
 
 
